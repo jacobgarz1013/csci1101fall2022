@@ -51,6 +51,19 @@ while game_running_flag:
         pygame.quit()
         break
 
+    key_pressed = pygame.key.get_pressed()
+
+    position_delta = 0
+
+    if key_pressed[pygame.K_LEFT]:
+        position_delta=-1
+    elif key_pressed[pygame.K_RIGHT]:
+        position_delta=1
+
+    game_characteristics["player"]["position"]["x"]+=position_delta
+
+
+
     # game graphics
     game_display.fill(game_characteristics["sky"]["color"])
 
